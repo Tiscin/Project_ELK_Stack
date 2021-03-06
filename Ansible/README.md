@@ -3,6 +3,7 @@
 It is normal to organize your Ansible folder with two additional folders: files and playbooks.
 
 Files: location for storing the config files
+
 Playbooks: location storing your playbook files
 
 If you choose to organize your folder in this fashion, you will need to edit the ![/Ansilble/filebeat-playbook.yml](Ansible/filebeat-playbook.yml) and ![/Ansible/metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml) with the additional folder.

@@ -90,15 +90,25 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy all files in the ![/Ansible](Ansible) folder to your /etc/ansible
-- Update the files as indicated on the ![/Ansible/README.md](Ansible/README.md) readme
+- Update the files as indicated on the ![/Ansible/README.md](Ansible/README.md)
 - Run the ![/Ansible/elk-install.yml](Ansible/elk-install.yml) playbook, and navigate to http://[your_IP]:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+If successful, you should be greeted with:
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-Collapse
+![/Screenshots/successful-ELK.png](Screenshots/successful-ELK.png)
 
+Commands to execute from your Linux home directory. You may need to run some commands as sudo.
 
+```bash
+$ git clone https://github.com/Tiscin/Project_ELK_Stack.git
+$ cp /Project_ELK_Stack/Ansible /etc/ansible
+$ cd /etc/ansible
+```
+
+Modify ansible.cfg, elk-install.yml, and hosts as directed on the Ansible readme
+
+```bash
+$ ansible-playbook elk-install.yml
+```
+
+Open your browser and go to the IP indicated above.
