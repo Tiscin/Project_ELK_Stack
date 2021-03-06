@@ -12,9 +12,10 @@ The files in this repository were used to configure the network depicted below.
 
 ![/Diagrams/ELK-Diagram.png](Diagrams/ELK-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Separate playbooks were used to install Filebeat and Metricbeat, though could be easily combined into a single playbook file.
 
-  - _TODO: Enter the playbook file._
+  /Ansible/file-playbook.yml
+  /Ansible/metricbeat-playbook.yml
 
 This document contains the following details:
 - Description of the Topology
@@ -47,40 +48,42 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not configured to accept any connection other than HTTP traffice to the DVWA site.
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: my home's public IP.
+Only the Jump Box machine can accept SSH connections from the Internet. Access to this machine is only allowed from my own public IP.
 
 Machines within the network can only be accessed by the Jump Box.
 
-A summary of the access policies in place can be found in the table below.
+A summary of the OS-level access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name            | Publicly Accessible | Allowed IP Addresses                         |
+|-----------------|---------------------|----------------------------------------------|
+| Jump Box        | Yes - SSH only      | OS: My public IP only                        |
+| ELK             | HTTP only           | OS: Virtual network; HTTP(5601) My IP only   |
+| Load balancerer | HTTP only           | HTTP(80) - routes traffic to Web-*           |
+| Web-*           | HTTP only           | OS: Virtual network; HTTP(80) My IP only     |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous due to time savings and ensuring that all machines are identically configured - it prevents human error of missing a step.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Python PIP
+- Install Docker
+- Configure Docker to use more memory
+- Install ELK container
+- Enables Docker to run at start
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![/Screenshots/ELK-Docker.png](Screenshots/ELK-Docker.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: Web-1, Web-2, and Web-3 (IPs listed above).
 
 I have installed the following Beats on these machines: Filebeats and Metricbeats.
 
-These Beats allow ELK to collect the following information from each machine: system logs and Docker performance metrics.
+These Beats allow ELK to collect the system logs and Docker performance metrics from each machine.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
