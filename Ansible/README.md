@@ -8,13 +8,13 @@ Playbooks: location storing your playbook files
 If you choose to organize your folder in this fashion, you will need to edit the ![/Ansilble/filebeat-playbook.yml](Ansible/filebeat-playbook.yml) and ![/Ansible/metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml) with the additional folder.
 
 For example:
-
+```pyhton3
     # Use copy module
   - name: Drop in filebeat.yml
     copy:
       src: /etc/ansible/filebeat-config.yml  # <------ edit this line to show the correct file path
       dest: /etc/filebeat/filebeat.yml
-
+```
 You will also need to update the hosts line in all playbook files.
 
 
