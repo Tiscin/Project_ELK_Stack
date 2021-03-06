@@ -89,9 +89,9 @@ These Beats allow ELK to collect the system logs and Docker performance metrics 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy all files in the ![/Ansible](Ansible) folder to your /etc/ansible
+- Update the files as indicated on the ![/Ansible/README.md](Ansible/README.md) readme
+- Run the ![/Ansible/elk-install.yml](Ansible/elk-install.yml) playbook, and navigate to http://[your_IP]:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
