@@ -101,7 +101,7 @@ Commands to execute from your Linux home directory. You may need to run some com
 
 ```bash
 $ git clone https://github.com/Tiscin/Project_ELK_Stack.git
-$ cp /Project_ELK_Stack/Ansible /etc/ansible
+$ cp -r /Project_ELK_Stack/Ansible /etc/ansible
 $ cd /etc/ansible
 ```
 
