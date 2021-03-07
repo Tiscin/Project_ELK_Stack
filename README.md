@@ -17,7 +17,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - [ELK stack](/Ansible/elk-install.yml)
 - [Filebeat](/Ansible/filebeat-playbook.yml)
 - [Metricbeat](/Ansible/metricbeat-playbook.yml)
-- [DVWA Web Server](/Ansible/pentest.yml)
+- [DVWA Web Server](/Ansible/pentest-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -92,7 +92,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy all files in the [Ansible](Ansible) folder to your /etc/ansible
-- Update the files as indicated on the [Ansible/README.md](Ansible/README.md)
+- Update the files as indicated on the [Ansible README.md](Ansible/README.md)
 - Run the [elk-install.yml](Ansible/elk-install.yml) playbook, and navigate to http://[your_IP]:5601/app/kibana to check that the installation worked as expected.
 
 If successful, you should be greeted with:
@@ -107,7 +107,7 @@ $ cp -r /Project_ELK_Stack/Ansible /etc/ansible
 $ cd /etc/ansible
 ```
 
-Modify ansible.cfg, elk-install.yml, and hosts as directed on the Ansible readme
+Modify ansible.cfg, elk-install.yml, and hosts as directed on the [Ansible README.md](Ansible/README.md)
 
 ```bash
 $ ansible-playbook elk-install.yml

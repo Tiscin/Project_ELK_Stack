@@ -20,7 +20,8 @@ You will also need to update the hosts line in all playbook files.
 
 
 Additional changes to make so they are unique to you.
-[ansible.cfg](Ansible/ansible.cfg)
+
+[ansible.cfg](ansible.cfg)
 - line 107
 
 [elk-install.yml](Ansible/elk-install.yml)
