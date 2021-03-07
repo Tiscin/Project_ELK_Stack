@@ -1105,7 +1105,7 @@ output.elasticsearch:
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
   hosts: ["10.1.0.4:9200"]
   username: "elastic"
-  password: "z37A*!pT" 
+  password: "<password>" 
 
   # Set gzip compression level.
   #compression_level: 0
