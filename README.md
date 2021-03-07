@@ -97,7 +97,7 @@ If successful, you should be greeted with:
 
 ![/Screenshots/successful-ELK.png](Screenshots/successful-ELK.png)
 
-Commands to execute from your Linux home directory. You may need to run some commands as sudo.
+Commands to execute from your Linux home directory. You may need to run some commands as `sudo`.
 
 ```bash
 $ git clone https://github.com/Tiscin/Project_ELK_Stack.git
