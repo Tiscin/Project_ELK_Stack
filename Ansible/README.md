@@ -6,7 +6,7 @@ Files: location for storing the config files
 
 Playbooks: location storing your playbook files
 
-If you choose to organize your folder in this fashion, you will need to edit the [filebeat-playbook.yml](Ansible/filebeat-playbook.yml) and [metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml) with the additional folder.
+If you choose to organize your folder in this fashion, you will need to edit the [filebeat-playbook.yml](filebeat-playbook.yml) and [metricbeat-playbook.yml](metricbeat-playbook.yml) with the additional folder.
 
 For example:
 ```pyhton3
@@ -24,15 +24,15 @@ Additional changes to make so they are unique to you.
 [ansible.cfg](ansible.cfg)
 - line 107
 
-[elk-install.yml](Ansible/elk-install.yml)
+[elk-install.yml](elk-install.yml)
 - line 4
 
-[filebeat-config.yml](Ansible/filebeat-config.yml)
+[filebeat-config.yml](filebeat-config.yml)
 - lines 1106-1108
 
-[hosts](Ansible/hosts)
+[hosts](hosts)
 - lines 20-30: change IP addresses only
 
-[metricbeat-config.yml](Ansible/metricbeat-config.yml)
+[metricbeat-config.yml](metricbeat-config.yml)
 - line 62
 - lines 96-98
